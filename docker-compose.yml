@@ -1,13 +1,13 @@
 version: "3"
 services:
   text-generation-webui-docker:
-    image: atinoda/text-generation-webui:default # Specify variant as the :tag
+    image: atinoda/text-generation-webui:default # Specify variant as the :tag 
     container_name: text-generation-webui
     environment:
-      - EXTRA_LAUNCH_ARGS="--listen --verbose" # Custom launch args (e.g., --model MODEL_NAME)
+      - EXTRA_LAUNCH_ARGS=" --model wojtab_llava-13b-v0-4bit-128g --multimodal-pipeline llava-13b --chat --api --extensions multimodal --listen --verbose" # Custom launch args (e.g., --model MODEL_NAME)
     ports:
       - 7860:7860  # Default web port
-#      - 5000:5000  # Default API port
+     - 5000:5000  # Default API port
 #      - 5005:5005  # Default streaming port
 #      - 5001:5001  # Default OpenAI API extension port
     volumes:
